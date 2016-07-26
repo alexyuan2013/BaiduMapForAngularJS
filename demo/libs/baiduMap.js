@@ -187,6 +187,13 @@
                 $scope.$watch('options.markers', function(newValue, oldValue) {
                     mark();
                 }, true);
+				//自定义控件
+				$scope.$watch('options.myControls', function(newValue, oldValue) {
+                    opts = $scope.options;
+                    for(var index in opts.myControls){
+						map.addControl(opts.myControls[index]);
+					}
+                }, true);
 
             },
             template: '<div style="width: 100%; height: 100%;"></div>'
